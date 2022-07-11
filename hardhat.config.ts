@@ -8,8 +8,6 @@ import "solidity-coverage"
 const config: HardhatUserConfig = {
   defaultNetwork: "hardhat",
   solidity: "0.8.15",
-
-
 };
 
 export default config;
