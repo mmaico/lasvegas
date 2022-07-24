@@ -11,9 +11,6 @@ contract Lock {
     event Withdrawal(uint amount, uint when);
 
     constructor(uint _unlockTime) payable {
-        console.log("###################################################");
-        console.log(_unlockTime);
-        console.log("###################################################");
         require(
             block.timestamp < _unlockTime,
             "Unlock time should be in the future"
