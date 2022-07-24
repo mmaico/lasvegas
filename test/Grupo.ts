@@ -3,23 +3,23 @@ import { anyValue } from "@nomicfoundation/hardhat-chai-matchers/withArgs";
 import { expect } from "chai";
 import { ethers } from "hardhat";
 
-describe("PossibleGames",  () => {
+describe("Grupo",  () => {
 
-  async function deployOneYearLockFixture() {
+  async function deployGroupContract() {
 
     const [owner, otherAccount] = await ethers.getSigners();
 
-    const PossibleGames = await ethers.getContractFactory("PossibleGames");
-    const possibleGames = await PossibleGames.deploy({});
+    const Grupo = await ethers.getContractFactory("Grupo");
+    const grupo = await Grupo.deploy({});
 
-    return { possibleGames, owner, otherAccount };
+    return { grupo, owner, otherAccount };
   }
 
-  describe("Deployment", function () {
-    it("Should set the right unlockTime", async function () {
-      const { possibleGames} = await loadFixture(deployOneYearLockFixture);
-      console.log(await possibleGames.getAllGames());
-      expect(await possibleGames.getAllGames()).to.equal("");
+  describe("Validate function is valid", function () {
+    it("Should return true when parameter is valid", async function () {
+      const { grupo } = await loadFixture(deployGroupContract);
+      console.log(await grupo.isValid(["DOG"], 0));
+      expect(await grupo.isValid(["DOG"], 0)).to.equal(true);
     });
   });
 
