@@ -1,5 +1,5 @@
 {
-  "name": "animalgame",
+  "name": "lasvegas",
   "version": "1.0.0",
   "description": "Very popular Game In Brazil",
   "main": "index.js",
@@ -33,5 +33,8 @@
     "ts-node": "^10.8.2",
     "typechain": "^8.1.0",
     "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.7.0"
   }
 }
